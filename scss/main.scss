@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+$primary: #d04f4f;
+$secondary: #3282f7;
+$tertiary: #68d9a4;
+
+* {
+	font-family: 'Lato', sans-serif;
+}
+
+// Override default bootstrap shadow and outline on btn
+.btn:focus,
+.btn:active {
+	outline: none !important;
+	box-shadow: none;
+}
+
+// --------------------------------- Custom text color  --------------------------------- //
+
+.custom-text-primary {
+	color: $primary;
+}
+
+.custom-text-secondary {
+	color: $secondary;
+}
+
+.custom-text-tertiary {
+	color: $tertiary;
+}
+
+// ---------------------------------  Custom button  --------------------------------- //
+
+.custom-btn-primary {
+	background-color: $primary;
+	&:hover {
+		background-color: $primary;
+	}
+}
+
+.custom-btn-secondary {
+	background-color: $secondary;
+	&:hover {
+		background-color: $secondary;
+	}
+}
+
+.custom-btn-tertiary {
+	background-color: $tertiary;
+	&:hover {
+		background-color: $tertiary;
+	}
+}
+
+// ---------------------------------  Custom background  --------------------------------- //
+
+.custom-bg-primary {
+	background-color: $primary;
+}
+
+.custom-bg-secondary {
+	background-color: $secondary;
+}
+
+.custom-bg-tertiary {
+	background-color: $tertiary;
+}
+
+// ---------------------------------  Custom Dropdown Items  --------------------------------- //
+
+.dropdown-item-tertiary:hover {
+	background-color: $tertiary;
+}
+
+.dropdown-item-secondary:hover {
+	background-color: $secondary;
+}
+
+.dropdown-item-primary:hover {
+	background-color: $primary;
+}
+
+.dropdown-menu {
+	padding-right: 11rem;
+}
