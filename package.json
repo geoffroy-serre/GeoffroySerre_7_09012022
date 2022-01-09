@@ -1,0 +1,26 @@
+{
+	"name": "useapi",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"lint": "eslint ./",
+		"live-server": "live-server --port=5500 --entry-file=index.html",
+		"build:scss": "sass ./scss/main.scss:./public/css/main.min.css --style compressed",
+		"prefix": " npm run build:scss && postcss ./public/css/main.min.css --use autoprefixer -d ./public/css/",
+		"on-change": "onchange \"scss/**/*.scss\" -- npm run prefix",
+		"start": "concurrently \"npm:live-server\" \"npm:lint\"  \"npm:on-change\""
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"autoprefixer": "^10.4.0",
+		"concurrently": "^6.5.1",
+		"eslint": "^8.4.1",
+		"live-server": "^1.2.1",
+		"onchange": "^7.1.0",
+		"postcss": "^8.4.4",
+		"postcss-cli": "^9.0.2",
+		"sass": "^1.44.0"
+	}
+}
