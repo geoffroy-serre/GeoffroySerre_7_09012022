@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
+@import './component/card';
+
 $primary: #d04f4f;
 $secondary: #3282f7;
 $tertiary: #68d9a4;
@@ -14,6 +16,13 @@ $tertiary: #68d9a4;
 .form-control:focus {
 	outline: none !important;
 	box-shadow: none;
+}
+
+@media (min-width: 1200px) {
+	.col-xl-recipe {
+		flex: 0 0 auto;
+		width: 30%;
+	}
 }
 
 // --------------------------------- Custom text color  --------------------------------- //
@@ -83,4 +92,10 @@ $tertiary: #68d9a4;
 
 .dropdown-menu {
 	padding-right: 11rem;
+}
+
+// ---------------------------------  Articles / Recipes  --------------------------------- //
+
+article:last-of-type {
+	margin-right: auto;
 }

@@ -1,4 +1,5 @@
 import {recipes} from '../data/recipes.js';
+import {recipeCard} from '../factories/recipeCardFactory.js';
 
 // Dom Elements
 const searchInput = document.querySelector('#input-search');
@@ -22,6 +23,8 @@ export function handleInputSearch() {
 			results.push(recipe);
 		}
 	}
+
+	displayResults(results);
 }
 
 function searchInSubArray(index, attributeName, searchTerms) {
@@ -43,5 +46,11 @@ function searchInSubArray(index, attributeName, searchTerms) {
 				return true;
 			}
 		}
+	}
+}
+
+function displayResults(results) {
+	for (let i = 0; i < results.length; i++) {
+		recipeCard(results[i]);
 	}
 }

@@ -22,5 +22,8 @@
 		"postcss": "^8.4.4",
 		"postcss-cli": "^9.0.2",
 		"sass": "^1.44.0"
+	},
+	"dependencies": {
+		"yarn": "^1.22.17"
 	}
 }
