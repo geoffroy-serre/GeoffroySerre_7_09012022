@@ -10,7 +10,8 @@ $tertiary: #68d9a4;
 
 // Override default bootstrap shadow and outline on btn
 .btn:focus,
-.btn:active {
+.btn:active,
+.form-control:focus {
 	outline: none !important;
 	box-shadow: none;
 }
