@@ -23,7 +23,7 @@ export function handleInputSearch() {
 			results.push(recipe);
 		}
 	}
-
+	console.log(results);
 	displayResults(results);
 }
 
