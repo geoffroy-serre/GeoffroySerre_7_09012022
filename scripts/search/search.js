@@ -1,4 +1,5 @@
 import {recipes} from '../data/recipes.js';
+
 import {recipeCard} from '../factories/recipeCardFactory.js';
 
 // Dom Elements
@@ -23,7 +24,7 @@ export function handleInputSearch() {
 			results.push(recipe);
 		}
 	}
-	console.log(results);
+
 	displayResults(results);
 }
 
@@ -50,7 +51,9 @@ function searchInSubArray(index, attributeName, searchTerms) {
 }
 
 function displayResults(results) {
+	const recipeList = document.querySelector('#results');
+	recipeList.innerHTML = '';
 	for (let i = 0; i < results.length; i++) {
-		recipeCard(results[i]);
+		recipeList.append(recipeCard(results[i]));
 	}
 }
