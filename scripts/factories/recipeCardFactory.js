@@ -6,33 +6,54 @@ export function recipeCard(recipe) {
 	const bodyFirst = document.createElement('div');
 	const cardTitle = document.createElement('h5');
 	const timerContainer = document.createElement('div');
-	const timerIcon = document.createElement('i');
+	const timerIcon = document.createElement('img');
 	const timerValue = document.createElement('span');
 	const bodySecond = document.createElement('div');
 	const ingredientsList = document.createElement('ul');
 	const recipeText = document.createElement('p');
 
-	bodyFirst.classList = 'd-flex justify-content-between';
+	bodyFirst.classList = 'd-flex justify-content-between mb-2';
+	bodySecond.classList = 'd-flex';
 	article.classList = 'col';
 	card.classList = 'card';
 	cardBody.classList = 'card-body';
 	image.classList = 'card-img-top';
 	cardTitle.classList = 'card-title recipe-title';
-	timerIcon.classList = 'bi bi-stopwatch fw-bold';
-	recipeText.classList = 'card-text';
+	recipeText.classList = 'card-text  text-small line-clamp ';
+	timerValue.classList = 'fs-6 fw-bold';
+	timerContainer.classList = 'align-items-center';
+	ingredientsList.classList = 'col-5 ms-0 px-0 ingredients me-3';
+	image.classList = 'img-placeholder';
+
+	article.addEventListener('click', () => {
+		recipeText.classList.toggle('line-clamp');
+	});
 
 	cardTitle.textContent = recipe.name;
-	timerValue.textContent = ` ${recipe.time}'`;
+	timerValue.textContent = ` ${recipe.time} mn`;
 	recipeText.textContent = recipe.description;
+
+	timerIcon.setAttribute('src', '../../public/images/stopwatch.svg');
+	cardTitle.setAttribute('title', recipe.name);
 
 	for (let i = 0; i < recipe.ingredients.length; i++) {
 		const ingredientLi = document.createElement('li');
 		const nameSpan = document.createElement('span');
-		nameSpan.classList = 'fw-bold';
+		nameSpan.classList = 'fw-bolder text-small ';
+		ingredientLi.classList = 'text-small';
 		const quantitySpan = document.createElement('span');
-		const unit = !recipe.ingredients[i].unit ? '' : recipe.ingredients[i].unit;
-		nameSpan.textContent = `${recipe.ingredients[i].ingredient}: `;
-		quantitySpan.textContent = `${recipe.ingredients[i].quantity} ${unit}`;
+		let unit = !recipe.ingredients[i].unit ? '' : recipe.ingredients[i].unit;
+		if (unit === 'grammes') {
+			unit = 'g';
+		}
+
+		if (recipe.ingredients[i].quantity) {
+			nameSpan.textContent = `${recipe.ingredients[i].ingredient}: `;
+			quantitySpan.textContent = `${recipe.ingredients[i].quantity}${unit}`;
+		} else {
+			nameSpan.textContent = `${recipe.ingredients[i].ingredient}`;
+			quantitySpan.textContent = '';
+		}
 
 		ingredientLi.append(nameSpan, quantitySpan);
 		ingredientsList.append(ingredientLi);

@@ -6,7 +6,7 @@
 	"scripts": {
 		"lint": "eslint ./",
 		"live-server": "live-server --port=5500 --entry-file=index.html",
-		"build:scss": "sass ./scss/main.scss:./public/css/main.min.css --style compressed",
+		"build:scss": "sass ./scss/main.scss:./public/css/main.min.css",
 		"prefix": " npm run build:scss && postcss ./public/css/main.min.css --use autoprefixer -d ./public/css/",
 		"on-change": "onchange \"scss/**/*.scss\" -- npm run prefix",
 		"start": "concurrently \"npm:live-server\" \"npm:lint\"  \"npm:on-change\""
@@ -22,4 +22,6 @@
 		"postcss": "^8.4.4",
 		"postcss-cli": "^9.0.2",
 		"sass": "^1.44.0"
-	}}
+	},
+	"browserslist": "last 10 versions"
+}

@@ -10,6 +10,54 @@ $tertiary: #68d9a4;
 	font-family: 'Lato', sans-serif;
 }
 
+ul {
+	list-style-type: none;
+}
+
+.btn-dropdown {
+	padding: 1.5rem 2rem;
+	font-size: 1.1rem;
+	font-weight: 600;
+}
+
+.dropdown-toggle-custom::after {
+	margin-left: 2rem;
+	vertical-align: middle;
+}
+
+#input-search {
+	background-color: #e7e7e7;
+}
+
+// .card-body {
+// 	overflow: hidden;
+// }
+
+.line-clamp {
+	height: 100%;
+	overflow: hidden;
+	-webkit-line-clamp: 7;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+}
+
+.card-title {
+	width: 75%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+#searchField {
+	position: relative;
+}
+.fa-search {
+	font-size: 1.5rem;
+	position: absolute;
+	top: 1rem;
+	right: 1.5rem;
+}
+
 // Override default bootstrap shadow and outline on btn
 .btn:focus,
 .btn:active,
@@ -101,6 +149,15 @@ article:last-of-type {
 }
 
 .recipe-title {
-	font-size: 1.15rem;
+	font-size: 1.1rem;
 	font-weight: 400;
+}
+
+.text-small {
+	font-size: 0.75rem;
+}
+
+.img-placeholder {
+	background-color: #c7bebe;
+	height: 178px;
 }
