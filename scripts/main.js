@@ -6,10 +6,18 @@ import {recipes} from './data/recipes.js';
 // Dom Elements
 const searchInput = document.querySelector('#input-search');
 const recipeList = document.querySelector('#results');
-retrieveData();
+
+// retrieveData();
+
 // Event Listeners
 searchInput.addEventListener('keyup', () => {
-	if (searchInput.value.length >= 3) handleInputSearch();
+	if (searchInput.value.length >= 3) {
+		handleInputSearch();
+	}
+	if (searchInput.value.length < 3) {
+		console.log('bite');
+		document.querySelector('#results').textContent = '';
+	}
 });
 
 function retrieveData() {

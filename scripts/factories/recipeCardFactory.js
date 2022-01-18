@@ -12,6 +12,7 @@ export function recipeCard(recipe) {
 	const ingredientsList = document.createElement('ul');
 	const recipeText = document.createElement('p');
 
+	// Element's classes
 	bodyFirst.classList = 'd-flex justify-content-between mb-2';
 	bodySecond.classList = 'd-flex';
 	article.classList = 'col';
@@ -25,16 +26,14 @@ export function recipeCard(recipe) {
 	ingredientsList.classList = 'col-5 ms-0 px-0 ingredients me-3';
 	image.classList = 'img-placeholder';
 
-	article.addEventListener('click', () => {
-		recipeText.classList.toggle('line-clamp');
-	});
+	// Element's attributes
+	timerIcon.setAttribute('src', '../../public/images/stopwatch.svg');
+	cardTitle.setAttribute('title', recipe.name);
 
+	// Element content
 	cardTitle.textContent = recipe.name;
 	timerValue.textContent = ` ${recipe.time} mn`;
 	recipeText.textContent = recipe.description;
-
-	timerIcon.setAttribute('src', '../../public/images/stopwatch.svg');
-	cardTitle.setAttribute('title', recipe.name);
 
 	for (let i = 0; i < recipe.ingredients.length; i++) {
 		const ingredientLi = document.createElement('li');
@@ -59,13 +58,18 @@ export function recipeCard(recipe) {
 		ingredientsList.append(ingredientLi);
 	}
 
+	// Elements event listeners
+	// This event is to allow user to click to see full recipe if it been clamped.
+	article.addEventListener('click', () => {
+		recipeText.classList.toggle('line-clamp');
+	});
+
+	// Element's appends.
 	timerContainer.append(timerIcon, timerValue);
 	bodyFirst.append(cardTitle, timerContainer);
 	bodySecond.append(ingredientsList, recipeText);
-
 	cardBody.append(bodyFirst, bodySecond);
 	card.append(image, cardBody);
-
 	article.append(card);
 
 	return article;
