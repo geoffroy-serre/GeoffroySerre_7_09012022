@@ -5,6 +5,10 @@ import {recipeCard} from '../factories/recipeCardFactory.js';
 // Dom Elements
 const searchInput = document.querySelector('#input-search');
 
+export function searchResults(array) {
+	return array;
+}
+
 export function handleInputSearch() {
 	let results = [];
 
@@ -24,7 +28,7 @@ export function handleInputSearch() {
 			results.push(recipe);
 		}
 	}
-
+	searchResults(results);
 	displayResults(results);
 }
 

@@ -20,6 +20,16 @@ ul {
 	font-weight: 600;
 }
 
+// span > input {
+// 	background-color: transparent;
+// 	border: none;
+// 	border-bottom: 2px solid white;
+// 	border-color: white;
+// 	&::placeholder {
+// 		color: white;
+// 	}
+// }
+
 .dropdown-toggle-custom::after {
 	margin-left: 2rem;
 	vertical-align: middle;
@@ -28,10 +38,6 @@ ul {
 #input-search {
 	background-color: #e7e7e7;
 }
-
-// .card-body {
-// 	overflow: hidden;
-// }
 
 .line-clamp {
 	height: 100%;
@@ -144,10 +150,6 @@ ul {
 
 // ---------------------------------  Articles / Recipes  --------------------------------- //
 
-article:last-of-type {
-	margin-right: auto;
-}
-
 .recipe-title {
 	font-size: 1.1rem;
 	font-weight: 400;
@@ -160,4 +162,15 @@ article:last-of-type {
 .img-placeholder {
 	background-color: #c7bebe;
 	height: 178px;
+}
+
+// ---------------------------------  DropDOwn Input  --------------------------------- //
+
+#ingredientsInputDropdown {
+	display: none;
+	background-color: $secondary;
+
+	&::placeholder {
+		color: #c7bebe;
+	}
 }
