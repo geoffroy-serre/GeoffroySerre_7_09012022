@@ -1,7 +1,11 @@
+@use './utils/variables' as *;
 @use './component/card';
 @use './component/dropdown';
 @use './component/tag';
-@use './utils/variables' as *;
+@use './component/button';
+@use './component/mainSearch';
+@use './utils/text-colors';
+@use './utils/bg-colors';
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
@@ -13,168 +17,13 @@ ul {
 	list-style-type: none;
 }
 
-// .btn-dropdown {
-// 	padding: 1.5rem 2rem;
-// 	font-size: 1.1rem;
-// 	font-weight: 600;
-// }
-
-// span > input {
-// 	background-color: transparent;
-// 	border: none;
-// 	border-bottom: 2px solid white;
-// 	border-color: white;
-// 	&::placeholder {
-// 		color: white;
-// 	}
-// }
-
-// .dropdown-toggle-custom::after {
-// 	margin-left: 2rem;
-// 	vertical-align: middle;
-// }
-
-#input-search {
-	background-color: #e7e7e7;
+.height-fixed {
+	height: 202px;
 }
 
 .line-clamp {
-	// height: 100%;
 	overflow: hidden;
 	-webkit-line-clamp: 7;
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 }
-
-.card-title {
-	width: 75%;
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-}
-
-#searchField {
-	position: relative;
-}
-.fa-search {
-	font-size: 1.5rem;
-	position: absolute;
-	top: 1rem;
-	right: 1.5rem;
-}
-
-// Override default bootstrap shadow and outline on btn
-.btn:focus,
-.btn:active,
-.form-control:focus {
-	outline: none !important;
-	box-shadow: none;
-}
-
-@media (min-width: 1200px) {
-	.col-xl-recipe {
-		flex: 0 0 auto;
-		width: 30%;
-	}
-}
-
-// --------------------------------- Custom text color  --------------------------------- //
-
-.custom-text-primary {
-	color: $primary;
-}
-
-.custom-text-secondary {
-	color: $secondary;
-}
-
-.custom-text-tertiary {
-	color: $tertiary;
-}
-
-// ---------------------------------  Custom button  --------------------------------- //
-
-.custom-btn-primary {
-	display: flex;
-	font-size: 1.13rem;
-	font-size: 1.13rem;
-	font-weight: 700;
-	justify-content: space-between;
-	align-items: center;
-	background-color: $primary;
-	width: 10.62rem;
-	height: 4.3rem;
-	outline: none;
-	border: none;
-	border-radius: 4px;
-	&:hover {
-		background-color: $primary;
-	}
-}
-
-.custom-btn-secondary {
-	display: flex;
-	font-size: 1.13rem;
-	font-weight: 700;
-	justify-content: space-between;
-	align-items: center;
-	background-color: $secondary;
-	width: 10.62rem;
-	height: 4.3rem;
-	outline: none;
-	border: none;
-	border-radius: 4px;
-	&:hover {
-		background-color: $secondary;
-	}
-}
-
-.custom-btn-tertiary {
-	display: flex;
-	font-size: 1.13rem;
-	font-size: 1.13rem;
-	font-weight: 700;
-	justify-content: space-between;
-	align-items: center;
-	background-color: $tertiary;
-	width: 10.62rem;
-	height: 4.3rem;
-	outline: none;
-	border: none;
-	border-radius: 4px;
-	&:hover {
-		background-color: $tertiary;
-	}
-}
-
-// ---------------------------------  Custom background  --------------------------------- //
-
-.custom-bg-primary {
-	background-color: $primary;
-}
-
-.custom-bg-secondary {
-	background-color: $secondary;
-}
-
-.custom-bg-tertiary {
-	background-color: $tertiary;
-}
-
-// ---------------------------------  Custom Dropdown Items  --------------------------------- //
-
-.dropdown-item-tertiary:hover {
-	background-color: $tertiary;
-}
-
-.dropdown-item-secondary:hover {
-	background-color: $secondary;
-}
-
-.dropdown-item-primary:hover {
-	background-color: $primary;
-}
-
-// ---------------------------------  Articles / Recipes  --------------------------------- //
-
-// ---------------------------------  DropDOwn Input  --------------------------------- //

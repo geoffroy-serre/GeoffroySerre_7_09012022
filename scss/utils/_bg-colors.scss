@@ -1,0 +1,13 @@
+@use './variables' as *;
+
+.custom-bg-primary {
+	background-color: $primary;
+}
+
+.custom-bg-secondary {
+	background-color: $secondary;
+}
+
+.custom-bg-tertiary {
+	background-color: $tertiary;
+}

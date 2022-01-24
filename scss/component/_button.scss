@@ -1,0 +1,31 @@
+@use '../utils/variables' as *;
+
+@mixin btn-base($color) {
+	display: flex;
+	font-size: 1.13rem;
+	font-size: 1.13rem;
+	font-weight: 700;
+	justify-content: space-between;
+	align-items: center;
+	background-color: $color;
+	width: 10.62rem;
+	height: 4.3rem;
+	outline: none;
+	border: none;
+	border-radius: 4px;
+	&:hover {
+		background-color: $color;
+	}
+}
+
+.custom-btn-primary {
+	@include btn-base($primary);
+}
+
+.custom-btn-secondary {
+	@include btn-base($secondary);
+}
+
+.custom-btn-tertiary {
+	@include btn-base($tertiary);
+}

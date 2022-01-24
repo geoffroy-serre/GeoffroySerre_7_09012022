@@ -12,10 +12,9 @@
 	height: 178px;
 }
 
-// .card-body {
-// 	// height: 202px;
-// }
-
-.height-fixed {
-	height: 202px;
+.card-title {
+	width: 75%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }

@@ -1,0 +1,13 @@
+@use '../utils/variables' as *;
+
+.custom-text-primary {
+	color: $primary;
+}
+
+.custom-text-secondary {
+	color: $secondary;
+}
+
+.custom-text-tertiary {
+	color: $tertiary;
+}
