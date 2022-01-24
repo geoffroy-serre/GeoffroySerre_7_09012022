@@ -17,7 +17,7 @@ export function recipeCard(recipe) {
 	bodySecond.classList = 'd-flex';
 	article.classList = 'col';
 	card.classList = 'card';
-	cardBody.classList = 'card-body';
+	cardBody.classList = 'card-body height-fixed';
 	image.classList = 'card-img-top';
 	cardTitle.classList = 'card-title recipe-title';
 	recipeText.classList = 'card-text  text-small line-clamp ';
@@ -62,6 +62,7 @@ export function recipeCard(recipe) {
 	// This event is to allow user to click to see full recipe if it been clamped.
 	article.addEventListener('click', () => {
 		recipeText.classList.toggle('line-clamp');
+		cardBody.classList.toggle('height-fixed');
 	});
 
 	// Element's appends.

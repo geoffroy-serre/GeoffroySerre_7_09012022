@@ -1,0 +1,15 @@
+.tag {
+	padding: 0 1rem;
+	width: auto;
+	border-radius: 4px;
+	color: white;
+}
+
+#tag-list {
+	display: flex;
+	gap: 1rem;
+}
+
+.fa-times-circle {
+	margin-left: 1rem;
+}

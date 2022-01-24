@@ -1,10 +1,9 @@
+@use './component/card';
+@use './component/dropdown';
+@use './component/tag';
+@use './utils/variables' as *;
+
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-
-@import './component/card';
-
-$primary: #d04f4f;
-$secondary: #3282f7;
-$tertiary: #68d9a4;
 
 * {
 	font-family: 'Lato', sans-serif;
@@ -14,11 +13,11 @@ ul {
 	list-style-type: none;
 }
 
-.btn-dropdown {
-	padding: 1.5rem 2rem;
-	font-size: 1.1rem;
-	font-weight: 600;
-}
+// .btn-dropdown {
+// 	padding: 1.5rem 2rem;
+// 	font-size: 1.1rem;
+// 	font-weight: 600;
+// }
 
 // span > input {
 // 	background-color: transparent;
@@ -30,17 +29,17 @@ ul {
 // 	}
 // }
 
-.dropdown-toggle-custom::after {
-	margin-left: 2rem;
-	vertical-align: middle;
-}
+// .dropdown-toggle-custom::after {
+// 	margin-left: 2rem;
+// 	vertical-align: middle;
+// }
 
 #input-search {
 	background-color: #e7e7e7;
 }
 
 .line-clamp {
-	height: 100%;
+	// height: 100%;
 	overflow: hidden;
 	-webkit-line-clamp: 7;
 	display: -webkit-box;
@@ -96,21 +95,53 @@ ul {
 // ---------------------------------  Custom button  --------------------------------- //
 
 .custom-btn-primary {
+	display: flex;
+	font-size: 1.13rem;
+	font-size: 1.13rem;
+	font-weight: 700;
+	justify-content: space-between;
+	align-items: center;
 	background-color: $primary;
+	width: 10.62rem;
+	height: 4.3rem;
+	outline: none;
+	border: none;
+	border-radius: 4px;
 	&:hover {
 		background-color: $primary;
 	}
 }
 
 .custom-btn-secondary {
+	display: flex;
+	font-size: 1.13rem;
+	font-weight: 700;
+	justify-content: space-between;
+	align-items: center;
 	background-color: $secondary;
+	width: 10.62rem;
+	height: 4.3rem;
+	outline: none;
+	border: none;
+	border-radius: 4px;
 	&:hover {
 		background-color: $secondary;
 	}
 }
 
 .custom-btn-tertiary {
+	display: flex;
+	font-size: 1.13rem;
+	font-size: 1.13rem;
+	font-weight: 700;
+	justify-content: space-between;
+	align-items: center;
 	background-color: $tertiary;
+	width: 10.62rem;
+	height: 4.3rem;
+	outline: none;
+	border: none;
+	border-radius: 4px;
 	&:hover {
 		background-color: $tertiary;
 	}
@@ -144,33 +175,6 @@ ul {
 	background-color: $primary;
 }
 
-.dropdown-menu {
-	padding-right: 11rem;
-}
-
 // ---------------------------------  Articles / Recipes  --------------------------------- //
 
-.recipe-title {
-	font-size: 1.1rem;
-	font-weight: 400;
-}
-
-.text-small {
-	font-size: 0.75rem;
-}
-
-.img-placeholder {
-	background-color: #c7bebe;
-	height: 178px;
-}
-
 // ---------------------------------  DropDOwn Input  --------------------------------- //
-
-#ingredientsInputDropdown {
-	display: none;
-	background-color: $secondary;
-
-	&::placeholder {
-		color: #c7bebe;
-	}
-}

@@ -1,16 +1,12 @@
 import {recipes} from '../data/recipes.js';
-
 import {recipeCard} from '../factories/recipeCardFactory.js';
+import {populateDropdownList} from '../dropdown/dropdown.js';
 
 // Dom Elements
 const searchInput = document.querySelector('#input-search');
 
-export function searchResults(array) {
-	return array;
-}
-
 export function handleInputSearch() {
-	let results = [];
+	const results = [];
 
 	for (let i = 0; i < recipes.length; i++) {
 		const recipe = recipes[i];
@@ -28,8 +24,9 @@ export function handleInputSearch() {
 			results.push(recipe);
 		}
 	}
-	searchResults(results);
+
 	displayResults(results);
+	populateDropdownList(results);
 }
 
 function searchInSubArray(index, attributeName, searchTerms) {
