@@ -3,12 +3,12 @@
 @mixin btn-base($color) {
 	display: flex;
 	font-size: 1.13rem;
-	font-size: 1.13rem;
 	font-weight: 700;
+	padding: 0 1.5rem;
 	justify-content: space-between;
 	align-items: center;
 	background-color: $color;
-	width: 10.62rem;
+	width: 10.7rem;
 	height: 4.3rem;
 	outline: none;
 	border: none;

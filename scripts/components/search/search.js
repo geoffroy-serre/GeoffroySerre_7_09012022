@@ -1,5 +1,5 @@
-import {recipes} from '../data/recipes.js';
-import {recipeCard} from '../factories/recipeCardFactory.js';
+import {recipes} from '../../data/recipes.js';
+import {recipeCard} from '../../factories/recipeCardFactory.js';
 import {populateDropdownList} from '../dropdown/dropdown.js';
 
 // Dom Elements
