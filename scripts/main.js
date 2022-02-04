@@ -36,10 +36,11 @@ ingredientsButton.addEventListener('click', () => {
 	ingredientsList.style.display = 'flex';
 });
 
-ingredientsInput.addEventListener('blur', () => {
+ingredientsInput.addEventListener('click', () => {
 	ingredientsButton.style.display = 'flex';
 	inputContainer.style.display = 'none';
 	ingredientsList.style.display = 'none';
+	ingredientsInput.value = '';
 });
 
 appliancesButton.addEventListener('click', () => {
@@ -49,7 +50,7 @@ appliancesButton.addEventListener('click', () => {
 	appliancesList.style.display = 'flex';
 });
 
-appliancesInput.addEventListener('blur', () => {
+appliancesInput.addEventListener('click', () => {
 	appliancesButton.style.display = 'flex';
 	inputAppliancesContainer.style.display = 'none';
 	appliancesList.style.display = 'none';
@@ -62,7 +63,7 @@ ustensilsButton.addEventListener('click', () => {
 	ustensilsList.style.display = 'flex';
 });
 
-ustensilsInput.addEventListener('blur', () => {
+ustensilsInput.addEventListener('click', () => {
 	ustensilsButton.style.display = 'flex';
 	inputUstensilsContainer.style.display = 'none';
 	ustensilsList.style.display = 'none';

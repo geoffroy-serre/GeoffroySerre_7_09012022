@@ -6,7 +6,7 @@ export function tagCreator(type, tagName) {
 
 	if (type === 'ingredient') {
 		tagBgColor = 'custom-bg-secondary';
-	} else if (type === 'apparels') {
+	} else if (type === 'appliance') {
 		tagBgColor = 'custom-bg-tertiary';
 	} else {
 		tagBgColor = 'custom-bg-primary';
@@ -21,8 +21,5 @@ export function tagCreator(type, tagName) {
 	return tagContainer;
 }
 
-{
-	/* <div class="custom-bg-secondary tag">
-	Tag<i class="far fa-times-circle"></i>
-</div>; */
-}
+// TODO CHECK IF TAG IS ADDED BEFORE ADD IT
+// TODO ADD EVENT TO SUPPRESS TAG

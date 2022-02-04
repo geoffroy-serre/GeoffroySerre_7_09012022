@@ -8,6 +8,10 @@ export function populateDropdownList(searchResults) {
 
 function populateAppliance(searchResults) {
 	const tagList = document.querySelector('#tag-list');
+	const appliancesButton = document.querySelector('#appliancesButtonDropdown');
+	const inputAppliancesContainer = document.querySelector(
+		'#inputAppliancesDropdownContainer'
+	);
 	const applianceDropdownList = document.querySelector(
 		'#appliancesDropdownList'
 	);
@@ -31,7 +35,11 @@ function populateAppliance(searchResults) {
 
 		link.addEventListener('click', () => {
 			const tag = tagCreator('appliance', appliancesSet[j]);
+			// TODO CHECK IF TAG IS ADDED BEFORE ADD IT
 			tagList.append(tag);
+			appliancesButton.style.display = 'flex';
+			inputAppliancesContainer.style.display = 'none';
+			applianceDropdownList.style.display = 'none';
 		});
 
 		liEl.append(link);
@@ -41,6 +49,10 @@ function populateAppliance(searchResults) {
 
 function populateUstensils(searchResults) {
 	const tagList = document.querySelector('#tag-list');
+	const ustensilsButton = document.querySelector('#ustensilsButtonDropdown');
+	const inputUstensilsContainer = document.querySelector(
+		'#inputUstensilsDropdownContainer'
+	);
 	const ustensilsDropdownList = document.querySelector(
 		'#ustensilsDropdownList'
 	);
@@ -65,8 +77,12 @@ function populateUstensils(searchResults) {
 		link.textContent = ustensilsSet[k];
 
 		link.addEventListener('click', () => {
-			const tag = tagCreator('ingredient', ustensilsSet[k]);
+			const tag = tagCreator('ustensil', ustensilsSet[k]);
+			// TODO CHECK IF TAG IS ADDED BEFORE ADD IT
 			tagList.append(tag);
+			ustensilsButton.style.display = 'flex';
+			inputUstensilsContainer.style.display = 'none';
+			ustensilsDropdownList.style.display = 'none';
 		});
 
 		liEl.append(link);
@@ -76,6 +92,10 @@ function populateUstensils(searchResults) {
 
 function populateIngredients(searchResults) {
 	const tagList = document.querySelector('#tag-list');
+	const ingredientsButton = document.querySelector(
+		'#ingredientsButtonDropdown'
+	);
+	const inputContainer = document.querySelector('#inputDropdownContainer');
 	const ingredientsDropdownList = document.querySelector(
 		'#ingredientsDropdownList'
 	);
@@ -99,10 +119,12 @@ function populateIngredients(searchResults) {
 		link.textContent = ingredientSet[k];
 
 		link.addEventListener('click', () => {
-			console.log("tag");
 			const tag = tagCreator('ingredient', ingredientSet[k]);
-			console.log(tag);
+			// TODO CHECK IF TAG IS ADDED BEFORE ADD IT
 			tagList.append(tag);
+			ingredientsButton.style.display = 'flex';
+			inputContainer.style.display = 'none';
+			ingredientsDropdownList.style.display = 'none';
 		});
 
 		liEl.append(link);

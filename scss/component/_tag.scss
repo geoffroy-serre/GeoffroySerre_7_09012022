@@ -3,11 +3,13 @@
 	width: auto;
 	border-radius: 4px;
 	color: white;
+	text-transform: capitalize;
 }
 
 #tag-list {
 	display: flex;
 	gap: 1rem;
+	flex-wrap: wrap;
 }
 
 .fa-times-circle {
