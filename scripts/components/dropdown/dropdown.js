@@ -99,12 +99,14 @@ function populateIngredients(searchResults) {
 		link.textContent = ingredientSet[k];
 
 		link.addEventListener('click', () => {
+			console.log("tag");
 			const tag = tagCreator('ingredient', ingredientSet[k]);
 			console.log(tag);
 			tagList.append(tag);
 		});
 
 		liEl.append(link);
+
 		ingredientsDropdownList.append(liEl);
 	}
 }

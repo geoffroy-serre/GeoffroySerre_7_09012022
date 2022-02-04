@@ -17,6 +17,8 @@
 # Vscode
 .vscode
 
+# IntelliJ
+.idea
 
 # production
 /build

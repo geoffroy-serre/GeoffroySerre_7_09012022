@@ -4,7 +4,7 @@
 	align-items: center;
 	padding: 0 1.5rem 0 0;
 	border-radius: 4px;
-	width: 41.7rem;
+	width: 100%;
 
 	& .fa-caret-up {
 		color: white;
@@ -15,21 +15,32 @@
 		outline: none;
 		border: none;
 		border-radius: 4px;
-		width: 40rem;
+		width: 100%;
 		&::placeholder {
 			color: #c7bebe;
 		}
+		@media (min-width:1200px){
+			width:40rem;
+		}
+
 	}
+
+	@media (min-width:1200px){
+		width:41.7rem;
+	}
+
+
+
 }
 
 .dropdown-list {
 	top: 4.1rem;
-	left: 0.8rem;
+	left: 0.75rem;
 	position: absolute;
 	display: none;
 	z-index: 1;
 	flex-wrap: wrap;
-	width: 41.7rem;
+	width: 100%;
 	justify-content: flex-start;
 	padding-bottom: 2rem;
 	border-radius: 0 0 4px 4px;
@@ -38,6 +49,10 @@
 		outline: none;
 		border: none;
 		text-transform: capitalize;
+	}
+
+	@media (min-width:1200px){
+		width:41.7rem;
 	}
 }
 
@@ -55,4 +70,10 @@
 	#inputUstensilsDropdownContainer {
 		@include dropdown-container;
 	}
+}
+
+.form-control:focus {
+	outline: none;
+	border: none;
+	box-shadow: none;
 }
