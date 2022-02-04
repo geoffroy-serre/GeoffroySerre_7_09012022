@@ -21,5 +21,4 @@ export function tagCreator(type, tagName) {
 	return tagContainer;
 }
 
-// TODO CHECK IF TAG IS ADDED BEFORE ADD IT
 // TODO ADD EVENT TO SUPPRESS TAG
