@@ -23,7 +23,7 @@ export function recipeCard(recipe) {
 	recipeText.classList = 'card-text  text-small line-clamp ';
 	timerValue.classList = 'fs-6 fw-bold';
 	timerContainer.classList = 'align-items-center';
-	ingredientsList.classList = 'col-5 ms-0 px-0 ingredients me-3';
+	ingredientsList.classList = 'col-5 ms-0 px-0 ingredients me-3 line-clamp';
 	image.classList = 'img-placeholder';
 
 	// Element's attributes
@@ -61,6 +61,7 @@ export function recipeCard(recipe) {
 	// Elements event listeners
 	// This event is to allow user to click to see full recipe if it been clamped.
 	article.addEventListener('click', () => {
+		ingredientsList.classList.toggle('line-clamp');
 		recipeText.classList.toggle('line-clamp');
 		cardBody.classList.toggle('height-fixed');
 	});

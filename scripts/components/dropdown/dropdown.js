@@ -1,12 +1,12 @@
 import {tagCreator} from '../../factories/tagFactory.js';
 
 export function populateDropdownList(searchResults) {
-	populateIngredients(searchResults);
-	populateAppliance(searchResults);
-	populateUstensils(searchResults);
+	populateIngredients(searchResults, 'all');
+	populateAppliance(searchResults, 'all');
+	populateUstensils(searchResults, 'all');
 }
 
-function populateAppliance(searchResults) {
+export function populateAppliance(searchResults) {
 	const tagList = document.querySelector('#tag-list');
 	const appliancesButton = document.querySelector('#appliancesButtonDropdown');
 	const inputAppliancesContainer = document.querySelector(
@@ -47,7 +47,7 @@ function populateAppliance(searchResults) {
 	}
 }
 
-function populateUstensils(searchResults) {
+export function populateUstensils(searchResults, type) {
 	const tagList = document.querySelector('#tag-list');
 	const ustensilsButton = document.querySelector('#ustensilsButtonDropdown');
 	const inputUstensilsContainer = document.querySelector(
@@ -58,13 +58,17 @@ function populateUstensils(searchResults) {
 	);
 
 	ustensilsDropdownList.innerHTML = '';
+	console.log('truc');
+	let ustensilsArray = [];
 
-	const ustensilsArray = [];
-
-	for (let i = 0; i < searchResults.length; i++) {
-		for (let j = 0; j < searchResults[i]?.ustensils.length; j++) {
-			ustensilsArray.push(searchResults[i].ustensils[j]);
+	if (type === 'all') {
+		for (let i = 0; i < searchResults.length; i++) {
+			for (let j = 0; j < searchResults[i]?.ustensils.length; j++) {
+				ustensilsArray.push(searchResults[i].ustensils[j]);
+			}
 		}
+	} else {
+		ustensilsArray = searchResults;
 	}
 
 	const ustensilsSet = Array.from(new Set(ustensilsArray));
@@ -90,7 +94,7 @@ function populateUstensils(searchResults) {
 	}
 }
 
-function populateIngredients(searchResults) {
+export function populateIngredients(searchResults, type) {
 	const tagList = document.querySelector('#tag-list');
 	const ingredientsButton = document.querySelector(
 		'#ingredientsButtonDropdown'
@@ -101,12 +105,16 @@ function populateIngredients(searchResults) {
 	);
 
 	ingredientsDropdownList.innerHTML = '';
-	const ingredientArray = [];
+	let ingredientArray = [];
 
-	for (let i = 0; i < searchResults.length; i++) {
-		for (let j = 0; j < searchResults[i]?.ingredients.length; j++) {
-			ingredientArray.push(searchResults[i].ingredients[j].ingredient);
+	if (type === 'all') {
+		for (let i = 0; i < searchResults.length; i++) {
+			for (let j = 0; j < searchResults[i]?.ingredients.length; j++) {
+				ingredientArray.push(searchResults[i].ingredients[j].ingredient);
+			}
 		}
+	} else {
+		ingredientArray = searchResults;
 	}
 
 	const ingredientSet = Array.from(new Set(ingredientArray));

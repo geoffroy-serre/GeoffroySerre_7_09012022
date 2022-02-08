@@ -1,4 +1,4 @@
-import {handleInputSearch} from './components/search/search.js';
+import {handleInputSearch, searchCurrent} from './components/search/search.js';
 
 // Dom Elements
 const searchInput = document.querySelector('#input-search');
@@ -29,6 +29,8 @@ searchInput.addEventListener('keyup', () => {
 	}
 });
 
+// Ingredients Events
+
 ingredientsButton.addEventListener('click', () => {
 	ingredientsButton.style.display = 'none';
 	inputContainer.style.display = 'flex';
@@ -43,6 +45,12 @@ ingredientsInput.addEventListener('click', () => {
 	ingredientsInput.value = '';
 });
 
+ingredientsInput.addEventListener('keyup', () => {
+	searchCurrent(ingredientsInput.value, 'ingredients');
+});
+
+// Appliance Events
+
 appliancesButton.addEventListener('click', () => {
 	appliancesButton.style.display = 'none';
 	inputAppliancesContainer.style.display = 'flex';
@@ -56,6 +64,7 @@ appliancesInput.addEventListener('click', () => {
 	appliancesList.style.display = 'none';
 });
 
+// Ustensils Events
 ustensilsButton.addEventListener('click', () => {
 	ustensilsButton.style.display = 'none';
 	inputUstensilsContainer.style.display = 'flex';
@@ -67,4 +76,8 @@ ustensilsInput.addEventListener('click', () => {
 	ustensilsButton.style.display = 'flex';
 	inputUstensilsContainer.style.display = 'none';
 	ustensilsList.style.display = 'none';
+});
+
+ustensilsInput.addEventListener('keyup', () => {
+	searchCurrent(ustensilsInput.value, 'ustensils');
 });
