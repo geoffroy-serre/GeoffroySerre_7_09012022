@@ -64,6 +64,10 @@ appliancesInput.addEventListener('click', () => {
 	appliancesList.style.display = 'none';
 });
 
+appliancesInput.addEventListener('keyup', () => {
+	searchCurrent(appliancesInput.value, 'appliances');
+});
+
 // Ustensils Events
 ustensilsButton.addEventListener('click', () => {
 	ustensilsButton.style.display = 'none';

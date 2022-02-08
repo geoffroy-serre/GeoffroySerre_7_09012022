@@ -6,7 +6,7 @@ export function populateDropdownList(searchResults) {
 	populateUstensils(searchResults, 'all');
 }
 
-export function populateAppliance(searchResults) {
+export function populateAppliance(searchResults, type) {
 	const tagList = document.querySelector('#tag-list');
 	const appliancesButton = document.querySelector('#appliancesButtonDropdown');
 	const inputAppliancesContainer = document.querySelector(
@@ -18,10 +18,14 @@ export function populateAppliance(searchResults) {
 
 	applianceDropdownList.innerHTML = '';
 
-	const appliancesArray = [];
+	let appliancesArray = [];
 
-	for (let i = 0; i < searchResults.length; i++) {
-		appliancesArray.push(searchResults[i].appliance);
+	if (type === 'all') {
+		for (let i = 0; i < searchResults.length; i++) {
+			appliancesArray.push(searchResults[i].appliance);
+		}
+	} else {
+		appliancesArray = searchResults;
 	}
 
 	const appliancesSet = Array.from(new Set(appliancesArray));

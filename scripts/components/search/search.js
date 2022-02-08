@@ -2,6 +2,7 @@ import {recipes} from '../../data/recipes.js';
 import {recipeCard} from '../../factories/recipeCardFactory.js';
 import {emptyArray} from '../../utils/arrayUtils.js';
 import {
+	populateAppliance,
 	populateDropdownList,
 	populateIngredients,
 	populateUstensils,
@@ -83,6 +84,10 @@ export function searchCurrent(search, type) {
 			console.log('switch ust');
 			searchUstensils(search);
 			break;
+		case 'appliances':
+			console.log('switch ust');
+			searchAppliance(search);
+			break;
 		default:
 			break;
 	}
@@ -105,6 +110,7 @@ function searchIngredient(search) {
 
 	displayResults(result);
 	populateIngredients(sortedDropdown);
+	populateUstensils(result, 'all');
 }
 
 function searchUstensils(search) {
@@ -125,4 +131,23 @@ function searchUstensils(search) {
 	const result = Array.from(recipes);
 	displayResults(result);
 	populateUstensils(sortedDropdown);
+	populateIngredients(result, 'all');
+}
+
+function searchAppliance(search) {
+	const sortedDropdown = [];
+	const recipes = new Set([]);
+
+	for (let i = 0; i < results.length; i++) {
+		if (results[i].appliance.toLowerCase().includes(search.toLowerCase())) {
+			sortedDropdown.push(results[i].appliance);
+			recipes.add(results[i]);
+		}
+	}
+
+	const result = Array.from(recipes);
+	displayResults(result);
+	populateAppliance(sortedDropdown);
+	populateUstensils(result, 'all');
+	populateIngredients(result, 'all');
 }
