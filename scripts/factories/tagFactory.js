@@ -18,6 +18,8 @@ export function tagCreator(type, tagName) {
 	tagContainer.textContent = tagName;
 	tagContainer.append(icon);
 
+	icon.addEventListener('click', () => tagContainer.remove());
+
 	return tagContainer;
 }
 

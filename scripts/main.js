@@ -30,7 +30,6 @@ searchInput.addEventListener('keyup', () => {
 });
 
 // Ingredients Events
-
 ingredientsButton.addEventListener('click', () => {
 	ingredientsButton.style.display = 'none';
 	inputContainer.style.display = 'flex';
@@ -50,7 +49,6 @@ ingredientsInput.addEventListener('keyup', () => {
 });
 
 // Appliance Events
-
 appliancesButton.addEventListener('click', () => {
 	appliancesButton.style.display = 'none';
 	inputAppliancesContainer.style.display = 'flex';

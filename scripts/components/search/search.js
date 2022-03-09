@@ -107,7 +107,6 @@ function searchIngredient(search) {
 	}
 
 	const result = Array.from(recipes);
-
 	displayResults(result);
 	populateIngredients(sortedDropdown);
 	populateUstensils(result, 'all');
