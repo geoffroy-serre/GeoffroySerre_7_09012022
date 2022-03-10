@@ -62,7 +62,6 @@ export function populateUstensils(searchResults, type) {
 	);
 
 	ustensilsDropdownList.innerHTML = '';
-	console.log('truc');
 	let ustensilsArray = [];
 
 	if (type === 'all') {

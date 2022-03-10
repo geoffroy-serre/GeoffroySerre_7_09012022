@@ -1,4 +1,5 @@
 import {handleInputSearch, searchCurrent} from './components/search/search.js';
+import {displayTagsResult} from './components/search/tagList.js';
 
 // Dom Elements
 const searchInput = document.querySelector('#input-search');
@@ -18,6 +19,7 @@ const ustensilsList = document.querySelector('#ustensilsDropdownList');
 const inputUstensilsContainer = document.querySelector(
 	'#inputUstensilsDropdownContainer'
 );
+const tagList = document.querySelector('#tag-list');
 
 // Event Listeners
 searchInput.addEventListener('keyup', () => {
@@ -28,6 +30,10 @@ searchInput.addEventListener('keyup', () => {
 		document.querySelector('#results').textContent = '';
 	}
 });
+
+// TagList events
+tagList.addEventListener('DOMNodeInserted', () => displayTagsResult());
+tagList.addEventListener('DOMNodeRemoved', () => displayTagsResult());
 
 // Ingredients Events
 ingredientsButton.addEventListener('click', () => {

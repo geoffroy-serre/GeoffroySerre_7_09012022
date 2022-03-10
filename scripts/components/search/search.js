@@ -15,6 +15,8 @@ const results = [];
 export function handleInputSearch() {
 	emptyArray(results);
 
+	console.log('handleinput triggered', results);
+
 	for (let i = 0; i < recipes.length; i++) {
 		const recipe = recipes[i];
 		const searchTerms = searchInput.value.toLowerCase();
@@ -50,12 +52,6 @@ function searchInSubArray(index, attributeName, searchTerms) {
 		}
 	} else if (attributeName === 'ustensils') {
 		for (let i = 0; i < recipes[index][attributeName].length; i++) {
-			console.log(
-				searchTerms,
-				recipes[index][attributeName][i],
-				recipes[index][attributeName][i].toLowerCase().includes(searchTerms)
-			);
-
 			if (
 				recipes[index][attributeName][i].toLowerCase().includes(searchTerms)
 			) {
@@ -65,7 +61,7 @@ function searchInSubArray(index, attributeName, searchTerms) {
 	}
 }
 
-function displayResults(results) {
+export function displayResults(results) {
 	const recipeList = document.querySelector('#results');
 	recipeList.innerHTML = '';
 	for (let i = 0; i < results.length; i++) {
@@ -77,15 +73,12 @@ export function searchCurrent(search, type) {
 	console.log(search);
 	switch (type) {
 		case 'ingredients':
-			console.log('switch ingredient');
 			searchIngredient(search);
 			break;
 		case 'ustensils':
-			console.log('switch ust');
 			searchUstensils(search);
 			break;
 		case 'appliances':
-			console.log('switch ust');
 			searchAppliance(search);
 			break;
 		default:
@@ -93,7 +86,7 @@ export function searchCurrent(search, type) {
 	}
 }
 
-function searchIngredient(search) {
+export function searchIngredient(search) {
 	const sortedDropdown = [];
 	const recipes = new Set([]);
 
@@ -107,12 +100,15 @@ function searchIngredient(search) {
 	}
 
 	const result = Array.from(recipes);
+
 	displayResults(result);
 	populateIngredients(sortedDropdown);
 	populateUstensils(result, 'all');
+	populateAppliance(result, 'all');
+	// setResults(result);
 }
 
-function searchUstensils(search) {
+export function searchUstensils(search) {
 	const sortedDropdown = [];
 	const recipes = new Set([]);
 
@@ -131,9 +127,10 @@ function searchUstensils(search) {
 	displayResults(result);
 	populateUstensils(sortedDropdown);
 	populateIngredients(result, 'all');
+	populateAppliance(result, 'all');
 }
 
-function searchAppliance(search) {
+export function searchAppliance(search) {
 	const sortedDropdown = [];
 	const recipes = new Set([]);
 
@@ -149,4 +146,12 @@ function searchAppliance(search) {
 	populateAppliance(sortedDropdown);
 	populateUstensils(result, 'all');
 	populateIngredients(result, 'all');
+}
+
+export function getResults() {
+	return results;
+}
+
+export function setResults(presults) {
+	results = presults;
 }
